@@ -57,7 +57,6 @@ async def about_bot(message: Message):
 Зроблено з любовʼю до української культури 🇺🇦"""
     )
 
-
 if __name__ == "__main__":
     print("✅ Ukrainian Culture Bot запущено.")
     asyncio.run(dp.run_polling(bot))
