@@ -4,25 +4,29 @@
             "title": "Тіні забутих предків",
             "author": "Михайло Коцюбинський",
             "genre": "Новела",
-            "year": 1911
+            "year": 1911,
+            "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT1YpzmK7RT40wzC3flduDGT5ovHB3rHC-qQqusa-6DIZyjgFZbKtNbBi7fR-UpLkbykPM5AxgGF-Ct5AWURp71g9yMgjpL4Te7LCkxOTJV56mw9UYw3kHm"
         },
         {
             "title": "Записки українського самашедшого",
             "author": "Ліна Костенко",
             "genre": "Роман",
-            "year": 2010
+            "year": 2010,
+            "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQwFY_H3smQDxKxhMrFz5cdMv7Pe-VQAuzTxpbGma_g6TC56Xk8WqEgWHCDQQaRpNXWclNxmowzKkSxb92zU7xJX_Jd9NTIAM9CZ156NCM"
         },
         {
             "title": "Фелікс Австрія",
             "author": "Софія Андрухович",
             "genre": "Історична проза",
-            "year": 2014
+            "year": 2014,
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVzEpJuLOCHVR-iF6J4HOUDbTTme1BeoeGFKNRUaIhctEt9fZo8V3Me96CP3KymOoESOJIVFoE-AmyJnklcZpaw8ZkhCYN7XLpcnDo5l5n"
         },
         {
             "title": "Інші оповіді",
             "author": "Ольга Кобилянська",
             "genre": "Оповідання",
-            "year": 1900
+            "year": 1900,
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSY3WoST8nuFNkUySAko2OmaCUF4Sy-BTHGSrJyajwzy_urvrreGOkBDeaivgOvcFjHXafAqhE96f8CgaVrO9dRUyvvmi446frjU8nZzn4"
         }
     ],
     "music": [

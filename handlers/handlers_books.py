@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from aiogram import Router, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.fsm.context import FSMContext
-from states import SortStates
+from states.states import SortStates
 import json
 
 with open("data/database.json", encoding="utf-8") as f:
@@ -15,7 +15,7 @@ books_router = Router()
 
 @books_router.message(F.text == "📚 Книги")
 async def show_books_menu(message: Message, state: FSMContext):
-    from keyboards.books_menu import books_menu_kb
+    from keyboards.keyboards_books import books_menu_kb
     await state.set_state(SortStates.ChoosingCategory)
     await state.update_data(category="books")
     await message.answer("📚 Оберіть спосіб сортування книг:", reply_markup=books_menu_kb)
@@ -51,5 +51,18 @@ async def sort_books_by_genre(message: Message, state: FSMContext):
 async def show_books_by_genre(message: Message, state: FSMContext):
     genre = message.text.replace("📚 Жанр: ", "")
     filtered = [b for b in db["books"] if b["genre"] == genre][:10]
-    text = "".join([f'<b>{b["title"]}</b> — {b["author"]} ({b["year"]})' for b in filtered])
-    await message.answer(f"📚 Книги у жанрі <b>{genre}</b>:{text}")
+
+    if not filtered:
+        await message.answer("❌ Немає книг у цьому жанрі.")
+        return
+
+    for book in filtered:
+        caption = (
+            f"<b>{book['title']}</b>\n"
+            f"✍️ {book['author']} ({book.get('year', 'рік невідомий')})\n"
+        )
+
+        if "image" in book and book["image"]:
+            await message.answer_photo(photo=book["image"], caption=caption, parse_mode="HTML")
+        else:
+            await message.answer(caption, parse_mode="HTML")

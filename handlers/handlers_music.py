@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from aiogram import Router, F
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.fsm.context import FSMContext
-from states import SortStates
+from states.states import SortStates
 import json
 
 with open("data/database.json", encoding="utf-8") as f:
@@ -15,7 +15,7 @@ music_router = Router()
 
 @music_router.message(F.text == "🎵 Музика")
 async def show_music_menu(message: Message, state: FSMContext):
-    from keyboards.music_menu import music_menu_kb
+    from keyboards.keyboards_music import music_menu_kb
     await state.set_state(SortStates.ChoosingCategory)
     await state.update_data(category="music")
     await message.answer("🎵 Оберіть спосіб сортування музики:", reply_markup=music_menu_kb)

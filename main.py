@@ -5,11 +5,11 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.client.default import DefaultBotProperties
 from aiogram.types import Message
 from config import TOKEN
-from keyboards.main_menu import main_menu_kb
+from keyboards.keyboards_main import main_menu_kb
 
-from handlers.books import books_router
-from handlers.music import music_router
-from handlers.search import search_router
+from handlers.handlers_books import books_router
+from handlers.handlers_music import music_router
+from handlers.handlers_search import search_router
 
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 storage = MemoryStorage()
